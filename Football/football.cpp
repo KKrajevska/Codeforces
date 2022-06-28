@@ -3,11 +3,9 @@ using namespace std;
 
 int main()
 {
-    int w;
-
-    cin >> w;
-
-    if (w > 2 && w % 2 == 0)
+    string players;
+    cin >> players;
+    if (players.find("0000000") != string::npos || players.find("1111111") != string::npos)
     {
         cout << "YES";
     }
