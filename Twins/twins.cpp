@@ -6,15 +6,16 @@ int main()
     int n;
     cin >> n;
     int coins[n];
-
+    int sum = 0;
     for (int i = 0; i < n; i++)
     {
         cin >> coins[i];
+        sum += coins[i];
     }
 
-    for (int i = 0; i < n - 1; i++)
+    for (int i = 0; i < n; i++)
     {
-        for (int j = 1; j < n; j++)
+        for (int j = i + 1; j < n; j++)
         {
             if (coins[i] < coins[j])
             {
@@ -25,19 +26,13 @@ int main()
         }
     }
 
-    int sum = 0;
-
-    for (int i = 0; i < n; i++)
-    {
-        sum += coins[i];
-    }
-
-    int halfSum = sum / 2;
     int tempSum = 0;
+    int halfSum = sum / 2;
     int cnt = 0;
     while (halfSum >= tempSum)
     {
         tempSum += coins[cnt];
+
         cnt++;
     }
 
