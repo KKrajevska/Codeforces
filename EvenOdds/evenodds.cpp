@@ -12,6 +12,7 @@ int main()
     {
         cout << (k * 2) - 1;
     }
+
     else
     {
         cout << (k - half) * 2;
